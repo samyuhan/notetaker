@@ -13,4 +13,10 @@ This application, called Note Taker, was created to write and save notes. The ta
 
 ## Installation
 To install this generator, please download this repo onto your local computer. Then, make sure to:
-- Install npm packages with ```npm i```
+- Install npm packages with `npm i`
+
+## Usage
+To use this application: 
+- Open Terminal
+- Type `node server.js` 
+- Open your browser and type `http://localhost:3000` to open the app
