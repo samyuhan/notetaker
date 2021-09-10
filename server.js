@@ -25,9 +25,20 @@ app.get("/notes", function (req, res) {
 })
 
 // get notes list
-app.route("/api/notes").get(function (req, res) {
+app.get("/api/notes", function(req, res) {
     res.json(db);
-})
+});
+
+// Add a new note to the json db file.
+app.post("/api/notes", function(req, res) {
+    let newNote = req.body;
+    db.push(newNote);
+    
+    fs.writeFile("db/db.json", JSON.stringify(notes,'\t'), err => {
+        if (err) throw err;
+        return true;
+    });
+});
 
     
 // set up listener
