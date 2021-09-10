@@ -54,3 +54,9 @@ app.get('/notes', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 ```
+
+## License
+MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+
+## Contribution
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
