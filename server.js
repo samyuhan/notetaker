@@ -14,25 +14,25 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // get notes list
-app.get('/api/notes', (req, res) => {
+app.get('/api/notes', function (req, res) {
     res.json(db.slice(1));
 });
 
 // get route to get index.html
-app.get('/', (req, res) => {
+app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 // get route for notes
-app.get('/notes', (req, res) => {
+app.get('/notes', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-app.get('*', (req, res) => {
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
-app.post('/api/notes', (req, res) => {
+app.post('/api/notes', function (req, res) {
     const newNote = req.body;
     if (!Array.isArray(db))
         db = [];
