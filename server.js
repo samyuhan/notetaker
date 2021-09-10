@@ -32,7 +32,25 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+app.post('/api/notes', (req, res) => {
+    const newNote = req.body;
+    if (!Array.isArray(db))
+        db = [];
+    
+    if (db.length === 0)
+        db.push(0);
 
+    req.body.id = db[0];
+    db[0]++;
+
+    db.push(newNote);
+    fs.writeFileSync(
+        path.join(__dirname, '/db/db.json'),
+        JSON.stringify(db, null, 2)
+    );
+    res.json(newNote);
+});
+    
 // set up listener
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
