@@ -18,3 +18,8 @@ app.use(express.json());
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
+
+// set up listener
+app.listen(PORT, function () {
+    console.log("App listening on PORT: " + PORT);
+});  
