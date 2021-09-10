@@ -6,7 +6,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contribution](#contribution)
-- [Author](#author
+- [Author](#author)
 
 ## Description
 This application, called Note Taker, was created to write and save notes. The task was to add and populate a server.js file to existing starter code. The application retrieves user note data from a JSON file.
@@ -20,3 +20,4 @@ To use this application:
 - Open Terminal
 - Type `node server.js` 
 - Open your browser and type `http://localhost:3000` to open the app
+![Demo Walkthrough](./public/assetsdemo.gif)
