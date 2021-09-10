@@ -32,8 +32,10 @@ app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+// create new note
 app.post('/api/notes', function (req, res) {
     const newNote = req.body;
+    
     if (!Array.isArray(db))
         db = [];
     
@@ -42,12 +44,13 @@ app.post('/api/notes', function (req, res) {
 
     req.body.id = db[0];
     db[0]++;
-
     db.push(newNote);
+
     fs.writeFileSync(
         path.join(__dirname, '/db/db.json'),
         JSON.stringify(db, null, 2)
     );
+
     res.json(newNote);
 });
     
