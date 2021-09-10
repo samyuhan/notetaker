@@ -29,7 +29,7 @@ app.get("/api/notes", function(req, res) {
     res.json(db);
 });
 
-// Add a new note to the json db file.
+// add new note to db
 app.post("/api/notes", function(req, res) {
     let newNote = req.body;
     db.push(newNote);
@@ -40,6 +40,10 @@ app.post("/api/notes", function(req, res) {
     });
 });
 
+// get notes by id
+app.get("/api/notes/:id", function(req,res) {
+    res.json(notes[req.params.id]);
+});
     
 // set up listener
 app.listen(PORT, function () {
