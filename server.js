@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 // JSON formatting
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); 
+app.use(express.json());
 
 // get route to get index.html
 app.get("/", function (req, res) {
@@ -24,7 +24,13 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 })
 
+// get notes list
+app.route("/api/notes").get(function (req, res) {
+    res.json(db);
+})
+
+    
 // set up listener
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
-});  
+});
