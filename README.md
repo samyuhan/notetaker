@@ -20,4 +20,4 @@ To use this application:
 - Open Terminal
 - Type `node server.js` 
 - Open your browser and type `http://localhost:3000` to open the app
-![Demo Walkthrough](./public/assetsdemo.gif)
+![Demo Walkthrough](./public/assets/demo.gif)
