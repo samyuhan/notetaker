@@ -1,16 +1,6 @@
 [
-  null,
   {
-    "title": "Notes",
-    "text": "Today's notes",
-    "id": {
-      "title": "Test Title",
-      "text": "Test text"
-    }
-  },
-  {
-    "title": "Notes2",
-    "text": "Tomorrow's notes",
-    "id": null
+      "title":"Test Title",
+      "text":"Test text"
   }
 ]
