@@ -6,6 +6,7 @@
 - [Technology](#technology)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Code](#code)
 - [Contribution](#contribution)
 - [Author](#author)
 
@@ -27,3 +28,29 @@ To use this application:
 ![Demo Walkthrough](./public/assets/demo.gif)
 
 Deployed link: https://glacial-tor-42217.herokuapp.com
+
+## Code
+This code shows how to set up Express so that you can create the routes.
+```
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const db = require("./db/db")
+
+var app = express();
+var PORT = process.env.PORT || 3001;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static('public'));
+```
+This code shows how to call the get routes for index and notes.
+```
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+app.get('/notes', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
+});
+```
